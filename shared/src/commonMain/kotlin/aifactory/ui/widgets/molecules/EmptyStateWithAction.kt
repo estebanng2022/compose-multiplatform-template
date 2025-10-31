@@ -1,4 +1,4 @@
-package aifactory.ui.components
+package aifactory.ui.widgets.molecules
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

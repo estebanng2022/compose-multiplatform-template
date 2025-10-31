@@ -16,7 +16,7 @@ import aifactory.ui.screens.runs.RunsScreen
 import aifactory.ui.screens.settings.SettingsScreen
 import aifactory.di.PresentationProviders
 import aifactory.ui.screens.agents.AgentsScreen
-import aifactory.ui.widgets.ContentView
+import aifactory.ui.widgets.molecules.ContentView
 import aifactory.ui.widgets.states.RenderAppState
 import android.content.Intent
 import androidx.compose.foundation.layout.Column

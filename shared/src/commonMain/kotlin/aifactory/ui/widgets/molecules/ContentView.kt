@@ -1,4 +1,4 @@
-package aifactory.ui.widgets.containers
+package aifactory.ui.widgets.molecules
 
 import aifactory.ui.widgets.feedback.EmptyStateView
 import aifactory.ui.widgets.feedback.ErrorStateView

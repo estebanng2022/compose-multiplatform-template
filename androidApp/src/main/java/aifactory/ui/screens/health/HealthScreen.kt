@@ -1,7 +1,7 @@
 package aifactory.ui.screens.health
 
 import aifactory.core.health.HealthItem
-import aifactory.ui.widgets.ContentView
+import aifactory.ui.widgets.molecules.ContentView
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth

@@ -6,8 +6,8 @@ import aifactory.data.AndroidThemeLister
 import aifactory.presentation.state.ProjectWizardState
 import aifactory.presentation.state.ThemeEntry
 import aifactory.presentation.viewmodels.ProjectWizardViewModel
-import aifactory.ui.widgets.EmptyStateWithAction
-import aifactory.ui.widgets.ThemePreviewPanel
+import aifactory.ui.widgets.molecules.EmptyStateWithAction
+import aifactory.ui.components.ThemePreviewPanel
 import android.content.Context
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

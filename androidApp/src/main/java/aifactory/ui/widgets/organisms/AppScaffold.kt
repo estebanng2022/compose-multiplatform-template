@@ -1,4 +1,4 @@
-package aifactory.ui.layout
+package aifactory.ui.widgets.organisms
 
 import aifactory.core.flags.LocalFeatureFlags
 import aifactory.navigation.AppNavGraph
