@@ -1,86 +1,58 @@
+# Parte 7 — Showcase (Desktop only)
 
----
+Este documento ha sido limpiado para el entorno Desktop‑only. Define la versión del Showcase exclusiva para Compose Desktop (JVM), sin dependencias de Android/iOS.
 
-## 🤖 Parte 7 — Showcase + AI Integration
+## Objetivo
+- Exponer un Showcase navegable para inspeccionar temas y widgets en Desktop.
 
-### 🎯 Objetivo
+## Alcance
+- Plataforma: Desktop (Compose JVM).
+- Navegación local (estado interno) — sin Navigation Compose Android.
+- Sin IO remoto; datos simulados opcionales.
 
-Unificar todo el sistema de Ai Factory y mostrar su potencial:
-
-* Visualizar los themes, widgets y pantallas (Showcase).
-* Integrar los **AIs locales** para ejecutar reglas, validar y crear proyectos por capas.
-
----
-
-### 📁 Estructura recomendada
-
+## Estructura sugerida
 ```
-app-android/showcase/
-  ShowcaseApp.kt
-  ShowcaseNavigation.kt
-  screens/
-    ThemeGalleryScreen.kt
-    ComponentsGalleryScreen.kt
-    PipelineDemoScreen.kt
-    AIAgentMonitorScreen.kt
-shared/ai/
-  LocalAIManager.kt
-  AgentExecutor.kt
-  RuleEngine.kt
+desktopApp/src/jvmMain/kotlin/
+  main.kt                       // Arranque Desktop → MainScreen/Showcase
+  ui/showcase/
+    ShowcaseApp.kt              // Contenedor + tabs locales
+    screens/
+      ThemeGalleryScreen.kt     // Paletas, tipografías, superficies
+      ComponentsGalleryScreen.kt// Buttons/Chips/Cards/Inputs/Feedback
+      StatesScreen.kt           // Loading/Empty/Error/Content
 ```
 
----
+## Secciones mínimas
+- Themes: paletas (Light/Dark), tipografía y superficies con ejemplos.
+- Components: botones, chips, tarjetas, inputs y feedback básicos.
+- States: Loading, Empty, Error, Content (render simple).
 
-### 🧩 Showcase (Visual Demo)
+## Navegación (estado local)
+```kotlin
+enum class ShowcaseTab { Theme, Components, States }
 
-| Pantalla                    | Propósito                                                                   |
-| --------------------------- | --------------------------------------------------------------------------- |
-| **ThemeGalleryScreen**      | Visualiza los diferentes themes (`premium`, `minimal`, `animalita`).        |
-| **ComponentsGalleryScreen** | Muestra todos los widgets del Design System en acción.                      |
-| **PipelineDemoScreen**      | Ejecuta un pipeline simulado paso a paso (build visual).                    |
-| **AIAgentMonitorScreen**    | Muestra el estado de cada AI local (logs, reglas activas, tareas en curso). |
-
----
-
-### ⚙️ Integración con AIs Locales
-
-| Componente         | Función                                                                |
-| ------------------ | ---------------------------------------------------------------------- |
-| **LocalAIManager** | Detecta e inicia los AIs instalados (Ollama, LM Studio, etc.).         |
-| **AgentExecutor**  | Envía tareas o prompts a un AI específico y recoge resultados.         |
-| **RuleEngine**     | Interpreta las reglas (`RuleSet`) y coordina qué AI ejecuta cada paso. |
-
-Los AIs leen directamente los archivos de configuración (`configs/agents/*.yaml`)
-y los pipelines definidos por el usuario. Ai Factory solo orquesta.
-
----
-
-### 🔄 Flujo general
-
-```
-User → Ai Factory UI → Selecciona pipeline
-     → RuleEngine → LocalAIManager → AgentExecutor
-         ↓
-     Resultados → Logs → Artifacts → Showcase / Dashboard
+@Composable
+fun ShowcaseApp() {
+  var current by remember { mutableStateOf(ShowcaseTab.Theme) }
+  // UI de tabs + when(current) { ... } para renderizar la sección
+}
 ```
 
----
+## Verificación (Desktop)
+- `./gradlew :desktopApp:run` abre la app con Showcase accesible.
+- Cambiar de pestaña renderiza cada sección sin errores.
+- No hay imports de Android ni `NavHostController`.
 
-### 🧩 Reglas de diseño
+## Checklist (Desktop)
+- [ ] `ui/showcase/ShowcaseApp.kt` (tabs + estado local)
+- [ ] `ThemeGalleryScreen.kt` (paletas + superficies)
+- [ ] `ComponentsGalleryScreen.kt` (Buttons/Chips/Cards)
+- [ ] `StatesScreen.kt` (Loading/Empty/Error/Content)
+- [ ] Entrada desde `main.kt` (o `MainScreen`) al Showcase
+- [ ] A11y básico (`contentDescription` en ejemplos clave)
+- [ ] Validación `:desktopApp:run`
 
-* Toda la comunicación con AIs es local (sin conexión externa).
-* Los archivos `.yaml` son las fuentes de verdad de reglas y comportamientos.
-* El Showcase no depende de internet, todo se genera desde el sistema local.
-* El usuario puede editar reglas, ver resultados y auditar ejecuciones.
+## Próximos pasos
+- Settings/Policies Desktop (Parte 8)
+- Plugin System Desktop (Parte 9)
 
----
-
-### ✅ Definición de Hecho
-
-* [x] Carpeta `app-android/showcase/` creada.
-* [x] Pantallas de galería y demo funcionales.
-* [x] `shared/ai/` con `LocalAIManager`, `AgentExecutor`, y `RuleEngine`.
-* [x] Integración con `configs/agents/*.yaml` validada.
-* [x] Showcase capaz de mostrar themes, widgets y ejecución de pipelines locales.
-
----

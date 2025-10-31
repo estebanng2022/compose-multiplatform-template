@@ -1,12 +1,12 @@
-# Ai Factory — Blueprint v2
+﻿# Ai Factory â€” Blueprint v2
 
-> **Visión General**
-> Ai Factory será una plataforma local para **crear apps nativas premium por capas**, 100% offline, controlada por AIs locales.
-> Todo será **editable** (reglas, pipelines, themes, widgets), excepto el **núcleo base protegido**.
+> **VisiÃ³n General**
+> Ai Factory serÃ¡ una plataforma local para **crear apps nativas premium por capas**, 100% offline, controlada por AIs locales.
+> Todo serÃ¡ **editable** (reglas, pipelines, themes, widgets), excepto el **nÃºcleo base protegido**.
 
 ---
 
-## 🧠 Parte 1 — Núcleo & Orquestación de AIs
+## ðŸ§  Parte 1 â€” NÃºcleo & OrquestaciÃ³n de AIs
 
 ### 1) Objetivo
 
@@ -14,21 +14,20 @@ Controlar AIs locales, ver su estado, editar reglas y lanzar pipelines para crea
 
 ### 2) Capas (arquitectura)
 
-* **Core (protegido)** → Tipos base (Result, Id, Clock), config, logging, file IO.
-* **Domain** → Modelos + casos de uso (Agents, Pipelines, Rules, Artifacts).
-* **Data** → Repositorios (fs/json/yaml), adaptadores a procesos externos.
-* **Presentation** → ViewModels, validaciones, acciones.
-* **UI** → Pantallas y widgets editables.
+* **Core (protegido)** â†’ Tipos base (Result, Id, Clock), config, logging, file IO.
+* **Domain** â†’ Modelos + casos de uso (Agents, Pipelines, Rules, Artifacts).
+* **Data** â†’ Repositorios (fs/json/yaml), adaptadores a procesos externos.
+* **Presentation** â†’ ViewModels, validaciones, acciones.
+* **UI** â†’ Pantallas y widgets editables.
 
-### 3) Módulos (monorepo)
+### 3) MÃ³dulos (monorepo)
 
 ```
-shared/        ← Core, Domain, Data, Presentation
-app-android/   ← UI nativa Android
-app-desktop/   ← UI opcional Desktop Compose
-tools/cli/     ← Comandos
-configs/agents/← Perfiles de AIs locales (yaml/json)
-artifacts/     ← Salidas: logs, builds, snapshots
+shared/        â† Core, Domain, Data, Presentation
+app-desktop/   â† UI opcional Desktop Compose
+tools/cli/     â† Comandos
+configs/agents/â† Perfiles de AIs locales (yaml/json)
+artifacts/     â† Salidas: logs, builds, snapshots
 ```
 
 ### 4) Modelos clave
@@ -37,9 +36,9 @@ artifacts/     ← Salidas: logs, builds, snapshots
 
 ### 5) Flujos
 
-Registrar AI → Plan → Ejecutar → Monitorear → Auditar.
+Registrar AI â†’ Plan â†’ Ejecutar â†’ Monitorear â†’ Auditar.
 
-### 6) UI (mínimo)
+### 6) UI (mÃ­nimo)
 
 Dashboard, Agents, Pipelines, Runs, Settings.
 
@@ -52,15 +51,15 @@ run start --pipeline <id>
 run logs --id <runId>
 ```
 
-### 8) Núcleo protegido (no editable)
+### 8) NÃºcleo protegido (no editable)
 
 * Estructura base de carpetas.
-* Módulos principales (`shared`, `app-android`, `tools`).
+* MÃ³dulos principales (`shared`, `app-desktop`, `tools`).
 * Tipos de Core (`Result`, `Id`, etc.).
 
 ---
 
-## 🎨 Parte 2 — Design System & Themes
+## ðŸŽ¨ Parte 2 â€” Design System & Themes
 
 ### Objetivo
 
@@ -95,46 +94,46 @@ shared/ui/
 ```
 
 Cada theme es un paquete visual completo.
-Editable desde Settings → sección **Design System**.
+Editable desde Settings â†’ secciÃ³n **Design System**.
 
 ### Futura App Showcase
 
 Una app de muestra integrada para visualizar todos los themes y widgets.
-Servirá como catálogo visual de la marca Ai Factory.
+ServirÃ¡ como catÃ¡logo visual de la marca Ai Factory.
 
 ---
 
-## ⚙️ Parte 3 — Pipelines y Creación por Capas
+## âš™ï¸ Parte 3 â€” Pipelines y CreaciÃ³n por Capas
 
 ### Objetivo
 
 Permitir crear proyectos nativos completos con un clic, siguiendo el blueprint.
 
-### Características
+### CaracterÃ­sticas
 
-* Pipelines prearmados por capas (Core → Domain → Data → UI).
-* 100% editables desde Settings → sección **Projects**.
+* Pipelines prearmados por capas (Core â†’ Domain â†’ Data â†’ UI).
+* 100% editables desde Settings â†’ secciÃ³n **Projects**.
 * Reglas de cada paso definidas en archivos `.yaml`.
 
 ### Ejemplo pipeline
 
 ```
-1️⃣ Crear estructura del proyecto
-2️⃣ Generar archivos base
-3️⃣ Configurar dependencias
-4️⃣ Compilar y probar
-5️⃣ Empaquetar y registrar build
+1ï¸âƒ£ Crear estructura del proyecto
+2ï¸âƒ£ Generar archivos base
+3ï¸âƒ£ Configurar dependencias
+4ï¸âƒ£ Compilar y probar
+5ï¸âƒ£ Empaquetar y registrar build
 ```
 
 ### Modo de uso
 
-Desde Ai Factory → seleccionar pipeline → verificar → “Run”.
+Desde Ai Factory â†’ seleccionar pipeline â†’ verificar â†’ â€œRunâ€.
 
 ---
 
-## 🧩 Parte 4 — Validadores Premium
+## ðŸ§© Parte 4 â€” Validadores Premium
 
-Incluye validadores automáticos para mantener la calidad:
+Incluye validadores automÃ¡ticos para mantener la calidad:
 
 * a11y (accesibilidad)
 * tokens (espaciado, color, padding)
@@ -143,35 +142,36 @@ Incluye validadores automáticos para mantener la calidad:
 
 ---
 
-## 📦 Parte 5 — Empaquetado y Portabilidad
+## ðŸ“¦ Parte 5 â€” Empaquetado y Portabilidad
 
-* Exportar proyectos listos para Android y Desktop Compose.
+* Exportar proyectos listos para Desktop Compose.
 * Guardar builds, logs y backups en `artifacts/`.
 * Portable: mover carpeta Ai Factory a otra PC sin perder nada.
 
 ---
 
-## 💬 Parte 6 — Preguntas Fijas por Screen
+## ðŸ’¬ Parte 6 â€” Preguntas Fijas por Screen
 
-Cada pantalla se evalúa con una lista fija de preguntas (para AI o humano):
-1️⃣ ¿La pantalla cumple el objetivo definido?
-2️⃣ ¿Usa correctamente el layout y los widgets del Design System?
-3️⃣ ¿El flujo de datos respeta las capas (Presentation → Domain → Data)?
-4️⃣ ¿Tiene estados claros (loading, empty, error)?
-5️⃣ ¿Cumple reglas de accesibilidad y theme?
-6️⃣ ¿Se puede reutilizar o mejorar algo?
+Cada pantalla se evalÃºa con una lista fija de preguntas (para AI o humano):
+1ï¸âƒ£ Â¿La pantalla cumple el objetivo definido?
+2ï¸âƒ£ Â¿Usa correctamente el layout y los widgets del Design System?
+3ï¸âƒ£ Â¿El flujo de datos respeta las capas (Presentation â†’ Domain â†’ Data)?
+4ï¸âƒ£ Â¿Tiene estados claros (loading, empty, error)?
+5ï¸âƒ£ Â¿Cumple reglas de accesibilidad y theme?
+6ï¸âƒ£ Â¿Se puede reutilizar o mejorar algo?
 
 Estas preguntas siempre son las mismas; un AI puede leerlas, analizarlas y guiar mejoras.
 
 ---
 
-## ✅ Definición de Hecho Global
+## âœ… DefiniciÃ³n de Hecho Global
 
 * Todo editable desde Settings (reglas, pipelines, themes, widgets).
-* Núcleo base protegido (no editable).
+* NÃºcleo base protegido (no editable).
 * Pipelines funcionales y prearmados.
-* Design System con múltiples themes listos.
+* Design System con mÃºltiples themes listos.
 * App Showcase creada.
-* Lista fija de preguntas activa para revisión por pantalla.
+* Lista fija de preguntas activa para revisiÃ³n por pantalla.
 
-- Ver tambi�n: Parte 7-13 - Desktop Only.md (Showcase, Plugins, Packaging, QA, DoD)
+- Ver también: Parte 7-13 - Desktop Only.md (Showcase, Plugins, Packaging, QA, DoD)
+
