@@ -107,18 +107,16 @@ private fun CardsShowcase() {
             fontWeight = FontWeight.SemiBold,
         )
         Row(horizontalArrangement = Arrangement.spacedBy(spacing.small)) {
-            StatusCard(title = "Pipeline listo", description = "Todos los validadores han pasado.", color = Color(0xFF22C55E))
+            StatusCard(title = "Pipeline listo", description = "Todos los validadores han pasado.", color = Color(0xFF22C55E), modifier = Modifier.weight(1f))
             StatusCard(title = "RevisiÃ³n requerida", description = "Hay 2 reglas con cambios pendientes.", color = Color(0xFFF97316))
         }
     }
 }
 
 @Composable
-private fun StatusCard(title: String, description: String, color: Color) {
+private fun StatusCard(title: String, description: String, color: Color, modifier: Modifier = Modifier) {
     val spacing = Spacing
-    Card(
-        colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.15f)),
-        modifier = Modifier.weight(1f),
+    Card(colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.15f)), modifier = modifier,
     ) {
         Column(modifier = Modifier.padding(spacing.medium)) {
             Text(text = title, style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold, color = color)
@@ -130,5 +128,6 @@ private fun StatusCard(title: String, description: String, color: Color) {
         }
     }
 }
+
 
 
