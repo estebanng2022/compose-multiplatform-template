@@ -1,4 +1,4 @@
-package aifactory.ui.layout.background
+package aifactory.ui.widgets.background
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme

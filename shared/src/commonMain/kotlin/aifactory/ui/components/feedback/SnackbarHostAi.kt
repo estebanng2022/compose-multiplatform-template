@@ -1,4 +1,4 @@
-package aifactory.ui.components.feedback
+package aifactory.ui.widgets.feedback
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Snackbar

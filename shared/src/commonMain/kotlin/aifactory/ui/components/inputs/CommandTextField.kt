@@ -1,4 +1,4 @@
-package aifactory.ui.components.inputs
+package aifactory.ui.widgets.inputs
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardActions

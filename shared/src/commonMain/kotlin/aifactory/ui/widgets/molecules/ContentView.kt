@@ -1,4 +1,4 @@
-package aifactory.ui.layout.containers
+package aifactory.ui.widgets.containers
 
 import aifactory.ui.components.feedback.EmptyStateView
 import aifactory.ui.components.feedback.ErrorStateView

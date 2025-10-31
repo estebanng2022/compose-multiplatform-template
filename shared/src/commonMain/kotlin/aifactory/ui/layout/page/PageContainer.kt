@@ -1,4 +1,4 @@
-package aifactory.ui.layout.page
+package aifactory.ui.widgets.page
 
 import aifactory.ui.foundation.Spacing
 import androidx.compose.foundation.layout.Box

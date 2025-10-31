@@ -1,4 +1,4 @@
-package aifactory.ui.components.chips
+package aifactory.ui.widgets.chips
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row

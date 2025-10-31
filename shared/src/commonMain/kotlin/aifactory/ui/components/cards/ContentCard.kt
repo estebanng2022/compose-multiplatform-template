@@ -1,4 +1,4 @@
-package aifactory.ui.components.cards
+package aifactory.ui.widgets.cards
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.fillMaxSize

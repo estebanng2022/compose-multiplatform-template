@@ -1,4 +1,4 @@
-package aifactory.ui.components.feedback
+package aifactory.ui.widgets.feedback
 
 import aifactory.ui.foundation.Spacing
 import androidx.compose.foundation.layout.Column

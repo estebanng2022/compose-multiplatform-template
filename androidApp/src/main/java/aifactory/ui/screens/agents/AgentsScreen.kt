@@ -2,7 +2,7 @@ package aifactory.ui.screens.agents
 
 import aifactory.presentation.state.UiState
 import aifactory.presentation.viewmodels.AgentsViewModel
-import aifactory.ui.layout.page.PageHeader
+import aifactory.ui.widgets.molecules.PageHeader
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue

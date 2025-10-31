@@ -1,4 +1,4 @@
-package aifactory.ui.components.overlays
+package aifactory.ui.widgets.overlays
 
 import androidx.compose.runtime.Composable
 

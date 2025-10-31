@@ -1,4 +1,4 @@
-package aifactory.ui.components.feedback
+package aifactory.ui.widgets.feedback
 
 import androidx.compose.runtime.Composable
 

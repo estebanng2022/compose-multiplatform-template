@@ -1,4 +1,4 @@
-package aifactory.ui.components.skeletons
+package aifactory.ui.widgets.skeletons
 
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode

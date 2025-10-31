@@ -29,7 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import aifactory.core.Config
 import aifactory.core.Result
-import aifactory.ui.layout.page.PageHeader
+import aifactory.ui.widgets.molecules.PageHeader
 import aifactory.ui.theme.LocalSpacing
 import aifactory.ui.theme.LocalThemeVariant
 import aifactory.ui.theme.ThemeVariant
