@@ -1,7 +1,7 @@
 package aifactory.ui.navigation
 
-import aifactory.ui.components.feedback.AiBadge
-import aifactory.ui.components.feedback.TooltipAi
+import aifactory.ui.widgets.feedback.AiBadge
+import aifactory.ui.widgets.feedback.TooltipAi
 import aifactory.ui.foundation.Spacing
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Spring

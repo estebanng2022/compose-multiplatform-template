@@ -1,4 +1,4 @@
-package aifactory.ui.components.overlays
+package aifactory.ui.widgets.overlays
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ModalBottomSheet
@@ -8,7 +8,7 @@ import androidx.compose.runtime.LaunchedEffect
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-actual fun ModalSheetAi(
+fun ModalSheetAi(
     visible: Boolean,
     onDismiss: () -> Unit,
     content: @Composable () -> Unit

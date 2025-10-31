@@ -1,7 +1,7 @@
 package aifactory.ui.widgets.containers
 
-import aifactory.ui.components.feedback.EmptyStateView
-import aifactory.ui.components.feedback.ErrorStateView
+import aifactory.ui.widgets.feedback.EmptyStateView
+import aifactory.ui.widgets.feedback.ErrorStateView
 import aifactory.ui.foundation.Spacing
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.layout.Box

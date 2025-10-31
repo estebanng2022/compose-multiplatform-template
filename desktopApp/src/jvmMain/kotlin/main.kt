@@ -1,7 +1,7 @@
 import aifactory.core.flags.DesktopFeatureFlags
 import aifactory.core.flags.LocalFeatureFlags
 import aifactory.platform.AppPaths
-import aifactory.ui.layout.AppScaffold
+import aifactory.ui.widgets.AppScaffold
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface

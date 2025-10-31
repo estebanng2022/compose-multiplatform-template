@@ -6,14 +6,14 @@ import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import aifactory.ui.components.AiAssistChip
+import aifactory.ui.widgets.AiAssistChip
 
 @Deprecated(
     message = "Use AiChipGroupSingle with AssistChips instead for better consistency.",
     replaceWith = ReplaceWith(
         "AiChipGroupSingle(items = suggestions.map { ChipItem(id = it, label = it) }, selectedId = null, onSelected = onSuggestionClick)",
-        "aifactory.ui.components.chips.AiChipGroupSingle",
-        "aifactory.ui.components.chips.ChipItem"
+        "aifactory.ui.widgets.chips.AiChipGroupSingle",
+        "aifactory.ui.widgets.chips.ChipItem"
     )
 )
 @Composable

@@ -10,12 +10,12 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import aifactory.ui.components.buttons.AiIconButton
-import aifactory.ui.components.AiChipGroupSingle
-import aifactory.ui.components.ChipItem
+import aifactory.ui.widgets.buttons.AiIconButton
+import aifactory.ui.widgets.AiChipGroupSingle
+import aifactory.ui.widgets.ChipItem
 import aifactory.ui.foundation.Sizing
 import aifactory.ui.foundation.Spacing
-import aifactory.ui.components.inputs.CommandTextField
+import aifactory.ui.widgets.inputs.CommandTextField
 
 @Composable
 fun CommandPromptCard(

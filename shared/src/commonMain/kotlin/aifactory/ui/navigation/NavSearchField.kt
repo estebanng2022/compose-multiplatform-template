@@ -1,6 +1,6 @@
 package aifactory.ui.navigation
 
-import aifactory.ui.components.inputs.SearchFieldCompact
+import aifactory.ui.widgets.inputs.SearchFieldCompact
 import aifactory.ui.foundation.Spacing
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
