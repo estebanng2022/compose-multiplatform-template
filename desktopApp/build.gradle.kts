@@ -25,6 +25,8 @@ kotlin {
 
 compose.desktop {
     application {
+        // Entry point: desktopApp/src/main/kotlin/aifactory/desktop/Main.kt
+        // Fully-qualified class name for the top-level main() is "aifactory.desktop.MainKt"
         mainClass = "aifactory.desktop.MainKt"
 
         nativeDistributions {

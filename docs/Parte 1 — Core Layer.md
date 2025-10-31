@@ -44,7 +44,7 @@ shared/core/
 * No depende de ninguna otra capa.
 * Solo usa la librería estándar de Kotlin.
 * No contiene UI ni lógica de dominio.
-* Debe compilar tanto en Android como Desktop Compose.
+* Debe compilar en Desktop (Compose JVM) sin dependencias de Android.
 * Todas las funciones deben ser puras y seguras (sin efectos ocultos).
 
 ---
