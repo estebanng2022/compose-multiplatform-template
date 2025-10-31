@@ -8,7 +8,11 @@ import aifactory.data.local.KeyValueStore
 import aifactory.data.mock.InMemoryAiRepository
 import android.content.Context
 
-object ServiceLocator {\r\n    fun repository(): AiRepository {\r\n        return repo ?: throw IllegalStateException("Repository not initialized; call repository(context) first")\r\n    }\r\n
+object ServiceLocator {
+    fun repository(): AiRepository {
+        return repo ?: throw IllegalStateException("Repository not initialized; call repository(context) first")
+    }
+
     @Volatile
     private var repo: AiRepository? = null
 
@@ -43,4 +47,5 @@ object ServiceLocator {\r\n    fun repository(): AiRepository {\r\n        retur
         repo = testRepo
     }
 }
+
 
