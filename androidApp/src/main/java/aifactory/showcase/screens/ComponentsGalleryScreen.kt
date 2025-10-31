@@ -1,4 +1,5 @@
 package aifactory.showcase.screens
+import androidx.compose.foundation.layout.weight
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -41,7 +42,7 @@ fun ComponentsGalleryScreen() {
                     fontWeight = FontWeight.Bold,
                 )
                 Text(
-                    text = "Referencia visual rápida de botones, chips, tarjetas y estados.",
+                    text = "Referencia visual rÃ¡pida de botones, chips, tarjetas y estados.",
                     style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.padding(top = spacing.sm),
                 )
@@ -107,7 +108,7 @@ private fun CardsShowcase() {
         )
         Row(horizontalArrangement = Arrangement.spacedBy(spacing.sm)) {
             StatusCard(title = "Pipeline listo", description = "Todos los validadores han pasado.", color = Color(0xFF22C55E))
-            StatusCard(title = "Revisión requerida", description = "Hay 2 reglas con cambios pendientes.", color = Color(0xFFF97316))
+            StatusCard(title = "RevisiÃ³n requerida", description = "Hay 2 reglas con cambios pendientes.", color = Color(0xFFF97316))
         }
     }
 }
@@ -129,4 +130,5 @@ private fun StatusCard(title: String, description: String, color: Color) {
         }
     }
 }
+
 

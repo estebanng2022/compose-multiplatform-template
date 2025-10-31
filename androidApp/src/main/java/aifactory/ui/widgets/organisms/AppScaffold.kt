@@ -57,10 +57,10 @@ fun AppScaffold(navController: NavHostController) {
                     .fillMaxSize()
                     .padding(paddingValues)
             ) {
-                SideNav(
-                    currentRoute = currentRoute(navController),
+                val current = currentRoute(navController)\r\n                SideNav(
+                    currentRoute = current,
                     onNavigate = { route ->
-                        if (currentRoute(navController) != route) {
+                        if (current != route) {
                             navController.navigate(route) {
                                 popUpTo(navController.graph.startDestinationId) {
                                     saveState = true
@@ -171,6 +171,7 @@ private fun routeIcon(route: String) = when (route) {
     aifactory.navigation.Routes.ABOUT -> Icons.Filled.Info
     else -> Icons.Filled.Dashboard
 }
+
 
 
 

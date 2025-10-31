@@ -15,7 +15,7 @@ import aifactory.ui.theme.AiFactoryTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val flags = BuildConfigFeatureFlags()
+        val flags = BuildConfigFeatureFlags()\r\n        // Initialize ServiceLocator repo\r\n        aifactory.core.ServiceLocator.repository(applicationContext)
         setContent {
             CompositionLocalProvider(LocalFeatureFlags provides flags) {
                 val navController = rememberNavController()
