@@ -1,4 +1,4 @@
-package aifactory.ui.widgets.page
+package aifactory.ui.widgets.molecules
 
 import aifactory.ui.foundation.Spacing
 import androidx.compose.foundation.layout.Column
