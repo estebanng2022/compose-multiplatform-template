@@ -25,7 +25,9 @@ kotlin {
 
 compose.desktop {
     application {
-        mainClass = "aifactory.desktop.MainKt"
+        // Entry point is the top-level function in desktopApp/src/jvmMain/kotlin/main.kt
+        // which compiles to the default package class name "MainKt"
+        mainClass = "MainKt"
 
         nativeDistributions {
             packageVersion = "1.0.0"
