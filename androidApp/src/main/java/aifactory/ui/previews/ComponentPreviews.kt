@@ -7,7 +7,7 @@ import androidx.compose.material3.Text
 import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import aifactory.ui.widgets.RenderUiState
+import aifactory.ui.components.RenderUiState
 import aifactory.presentation.state.UiState
 
 @Preview

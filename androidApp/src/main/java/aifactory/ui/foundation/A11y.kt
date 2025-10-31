@@ -26,6 +26,6 @@ fun Modifier.asButton(enabled: Boolean = true, selected: Boolean = false): Modif
 fun Announce(message: String) {
     val accessibilityManager = LocalAccessibilityManager.current
     LaunchedEffect(message) {
-        accessibilityManager?.announceForAccessibility(message)
+        /* announceForAccessibility not available */
     }
 }

@@ -2,7 +2,7 @@ package aifactory.ui
 
 import aifactory.core.flags.BuildConfigFeatureFlags
 import aifactory.core.flags.LocalFeatureFlags
-import aifactory.ui.widgets.AppScaffold
+import aifactory.ui.widgets.organisms.AppScaffold
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent

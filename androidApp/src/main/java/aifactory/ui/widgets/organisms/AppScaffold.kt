@@ -41,8 +41,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import aifactory.ui.theme.LocalSizing
-import aifactory.ui.theme.LocalSpacing
+import aifactory.ui.foundation.Spacing
 import androidx.compose.foundation.layout.Arrangement
 
 @Composable
@@ -117,7 +116,7 @@ private fun SideNav(
             .width(220.dp)
             .fillMaxHeight()
             .background(Color.Gray.copy(alpha = 0.2f))
-            .padding(LocalSpacing.current.sm)
+            .padding(Spacing.small)
             .testTag(TestTags.SideNav)
             .semantics { contentDescription = UiStrings.sideNav }
     ) {
@@ -137,7 +136,7 @@ private fun SideNav(
             ) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(LocalSpacing.current.sm)
+                    horizontalArrangement = Arrangement.spacedBy(Spacing.small)
                 ) {
                     Icon(
                         imageVector = routeIcon(item.route),
@@ -172,3 +171,6 @@ private fun routeIcon(route: String) = when (route) {
     aifactory.navigation.Routes.ABOUT -> Icons.Filled.Info
     else -> Icons.Filled.Dashboard
 }
+
+
+
