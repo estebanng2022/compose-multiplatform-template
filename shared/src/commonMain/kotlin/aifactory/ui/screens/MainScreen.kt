@@ -3,7 +3,7 @@ package aifactory.ui.screens
 import aifactory.navigation.AppNavigation
 import aifactory.ui.widgets.background.AppBackground
 import aifactory.ui.widgets.page.PageContainer
-import aifactory.ui.widgets.page.PageHeader
+import aifactory.ui.widgets.molecules.PageHeader
 import aifactory.ui.navigation.NavRailToggle
 import aifactory.ui.navigation.SideNavigation
 import androidx.compose.foundation.layout.Row

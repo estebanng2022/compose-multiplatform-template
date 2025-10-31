@@ -1,4 +1,4 @@
-package aifactory.ui.components
+package aifactory.ui.widgets
 
 import aifactory.ui.foundation.Spacing
 import androidx.compose.animation.animateColorAsState

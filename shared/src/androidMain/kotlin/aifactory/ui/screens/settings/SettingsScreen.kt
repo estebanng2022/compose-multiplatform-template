@@ -53,29 +53,19 @@ fun SettingsScreen() {
 
     LaunchedEffect(Unit) {
         agents = editor.listAgents()
-        pipelinesContent = editor.readText(Config.Paths.PIPELINES_FILE)\.getOrNull\(\) ?: \"\"
+        pipelinesContent = editor.readText(Config.Paths.PIPELINES_FILE).getOrNull() ?: ""
         themes = editor.listThemes()
     }
 
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
         PageHeader(title = "Settings", subtitle = "Design system and preferences")
 
-        // Theme selector
-        Column(Modifier.fillMaxWidth().padding(spacing\.medium), verticalArrangement = Arrangement.spacedBy(spacing\.small)) {
-            Text("Theme", fontWeight = FontWeight.SemiBold)
-            Row(horizontalArrangement = Arrangement.spacedBy(spacing\.small)) {
-                        Text("$marker ${variant.name}")
-                    }
-                }
-            }
-        }
-
-        Spacer(Modifier.height(spacing\.medium))
+        Spacer(Modifier.height(spacing.medium))
 
         // Config editor: Agents
-        Column(Modifier.fillMaxWidth().padding(spacing\.medium), verticalArrangement = Arrangement.spacedBy(spacing\.small)) {
+        Column(Modifier.fillMaxWidth().padding(spacing.medium), verticalArrangement = Arrangement.spacedBy(spacing.small)) {
             Text("Configs: Agents", fontWeight = FontWeight.SemiBold)
-            Row(horizontalArrangement = Arrangement.spacedBy(spacing\.small)) {
+            Row(horizontalArrangement = Arrangement.spacedBy(spacing.small)) {
                 Button(onClick = { agents = editor.listAgents() }) { Text("Refrescar") }
                 Button(onClick = {
                     val file = editor.newAgentFileName()
@@ -84,24 +74,24 @@ fun SettingsScreen() {
                 }) { Text("Nuevo") }
             }
             Row(Modifier.fillMaxWidth()) {
-                Column(Modifier.weight(0.35f), verticalArrangement = Arrangement.spacedBy(spacing\.xSmall)) {
+                Column(Modifier.weight(0.35f), verticalArrangement = Arrangement.spacedBy(spacing.xSmall)) {
                     agents.forEach { file ->
                         TextButton(onClick = {
                             selectedAgent = file
                             scope.launch {
-                                agentContent = editor.readText(file.path)\.getOrNull\(\) ?: \"\"
+                                agentContent = editor.readText(file.path).getOrNull() ?: ""
                             }
                         }) { Text(file.name) }
                     }
                 }
-                Column(Modifier.weight(0.65f).padding(start = spacing\.medium)) {
+                Column(Modifier.weight(0.65f).padding(start = spacing.medium)) {
                     OutlinedTextField(
                         modifier = Modifier.fillMaxWidth().height(240.dp),
                         value = agentContent,
                         onValueChange = { agentContent = it },
                         label = { Text(selectedAgent?.name ?: "agent.yaml") }
                     )
-                    Row(horizontalArrangement = Arrangement.spacedBy(spacing\.small)) {
+                    Row(horizontalArrangement = Arrangement.spacedBy(spacing.small)) {
                         Button(onClick = {
                             val path = selectedAgent?.path ?: return@Button
                             scope.launch {
@@ -117,10 +107,10 @@ fun SettingsScreen() {
             }
         }
 
-        Spacer(Modifier.height(spacing\.medium))
+        Spacer(Modifier.height(spacing.medium))
 
         // Config editor: Pipelines
-        Column(Modifier.fillMaxWidth().padding(spacing\.medium), verticalArrangement = Arrangement.spacedBy(spacing\.small)) {
+        Column(Modifier.fillMaxWidth().padding(spacing.medium), verticalArrangement = Arrangement.spacedBy(spacing.small)) {
             Text("Configs: Pipelines", fontWeight = FontWeight.SemiBold)
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth().height(240.dp),
@@ -128,7 +118,7 @@ fun SettingsScreen() {
                 onValueChange = { pipelinesContent = it },
                 label = { Text(Config.Paths.PIPELINES_FILE) }
             )
-            Row(horizontalArrangement = Arrangement.spacedBy(spacing\.small)) {
+            Row(horizontalArrangement = Arrangement.spacedBy(spacing.small)) {
                 Button(onClick = {
                     scope.launch {
                         when (val res = editor.writeText(Config.Paths.PIPELINES_FILE, pipelinesContent)) {
@@ -139,18 +129,18 @@ fun SettingsScreen() {
                 }) { Text("Guardar") }
                 Button(onClick = {
                     scope.launch {
-                        pipelinesContent = editor.readText(Config.Paths.PIPELINES_FILE)\.getOrNull\(\) ?: \"\"
+                        pipelinesContent = editor.readText(Config.Paths.PIPELINES_FILE).getOrNull() ?: ""
                     }
                 }) { Text("Recargar") }
             }
         }
 
-        Spacer(Modifier.height(spacing\.medium))
+        Spacer(Modifier.height(spacing.medium))
 
         // Project Themes (CRUD + Validate)
-        Column(Modifier.fillMaxWidth().padding(spacing\.medium), verticalArrangement = Arrangement.spacedBy(spacing\.small)) {
+        Column(Modifier.fillMaxWidth().padding(spacing.medium), verticalArrangement = Arrangement.spacedBy(spacing.small)) {
             Text("Settings → Design System → Project Themes", fontWeight = FontWeight.SemiBold)
-            Row(horizontalArrangement = Arrangement.spacedBy(spacing\.small)) {
+            Row(horizontalArrangement = Arrangement.spacedBy(spacing.small)) {
                 Button(onClick = { themes = editor.listThemes() }) { Text("Refrescar") }
                 Button(onClick = {
                     val f = editor.newThemeFileName(project = "demo", theme = "theme-${themes.size + 1}")
@@ -165,22 +155,22 @@ fun SettingsScreen() {
                 }) { Text("Nuevo Theme") }
             }
             Row(Modifier.fillMaxWidth()) {
-                Column(Modifier.weight(0.35f), verticalArrangement = Arrangement.spacedBy(spacing\.xSmall)) {
+                Column(Modifier.weight(0.35f), verticalArrangement = Arrangement.spacedBy(spacing.xSmall)) {
                     themes.forEach { file ->
                         TextButton(onClick = {
                             selectedTheme = file
-                            scope.launch { themeContent = editor.readText(file.path)\.getOrNull\(\) ?: \"\" }
+                            scope.launch { themeContent = editor.readText(file.path).getOrNull() ?: "" }
                         }) { Text(file.displayName()) }
                     }
                 }
-                Column(Modifier.weight(0.65f).padding(start = spacing\.medium)) {
+                Column(Modifier.weight(0.65f).padding(start = spacing.medium)) {
                     OutlinedTextField(
                         modifier = Modifier.fillMaxWidth().height(240.dp),
                         value = themeContent,
                         onValueChange = { themeContent = it },
                         label = { Text(selectedTheme?.displayName() ?: "theme.yaml") }
                     )
-                    Row(horizontalArrangement = Arrangement.spacedBy(spacing\.small)) {
+                    Row(horizontalArrangement = Arrangement.spacedBy(spacing.small)) {
                         Button(onClick = {
                             val path = selectedTheme?.path ?: return@Button
                             scope.launch {
