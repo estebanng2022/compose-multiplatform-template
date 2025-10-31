@@ -25,9 +25,9 @@ kotlin {
 
 compose.desktop {
     application {
-        // Entry point is the top-level function in desktopApp/src/jvmMain/kotlin/main.kt
-        // which compiles to the default package class name "MainKt"
-        mainClass = "MainKt"
+        // Entry point: desktopApp/src/main/kotlin/aifactory/desktop/Main.kt
+        // Fully-qualified class name for the top-level main() is "aifactory.desktop.MainKt"
+        mainClass = "aifactory.desktop.MainKt"
 
         nativeDistributions {
             packageVersion = "1.0.0"
