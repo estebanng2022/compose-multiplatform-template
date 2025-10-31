@@ -1,0 +1,86 @@
+
+---
+
+## 🤖 Parte 7 — Showcase + AI Integration
+
+### 🎯 Objetivo
+
+Unificar todo el sistema de Ai Factory y mostrar su potencial:
+
+* Visualizar los themes, widgets y pantallas (Showcase).
+* Integrar los **AIs locales** para ejecutar reglas, validar y crear proyectos por capas.
+
+---
+
+### 📁 Estructura recomendada
+
+```
+app-android/showcase/
+  ShowcaseApp.kt
+  ShowcaseNavigation.kt
+  screens/
+    ThemeGalleryScreen.kt
+    ComponentsGalleryScreen.kt
+    PipelineDemoScreen.kt
+    AIAgentMonitorScreen.kt
+shared/ai/
+  LocalAIManager.kt
+  AgentExecutor.kt
+  RuleEngine.kt
+```
+
+---
+
+### 🧩 Showcase (Visual Demo)
+
+| Pantalla                    | Propósito                                                                   |
+| --------------------------- | --------------------------------------------------------------------------- |
+| **ThemeGalleryScreen**      | Visualiza los diferentes themes (`premium`, `minimal`, `animalita`).        |
+| **ComponentsGalleryScreen** | Muestra todos los widgets del Design System en acción.                      |
+| **PipelineDemoScreen**      | Ejecuta un pipeline simulado paso a paso (build visual).                    |
+| **AIAgentMonitorScreen**    | Muestra el estado de cada AI local (logs, reglas activas, tareas en curso). |
+
+---
+
+### ⚙️ Integración con AIs Locales
+
+| Componente         | Función                                                                |
+| ------------------ | ---------------------------------------------------------------------- |
+| **LocalAIManager** | Detecta e inicia los AIs instalados (Ollama, LM Studio, etc.).         |
+| **AgentExecutor**  | Envía tareas o prompts a un AI específico y recoge resultados.         |
+| **RuleEngine**     | Interpreta las reglas (`RuleSet`) y coordina qué AI ejecuta cada paso. |
+
+Los AIs leen directamente los archivos de configuración (`configs/agents/*.yaml`)
+y los pipelines definidos por el usuario. Ai Factory solo orquesta.
+
+---
+
+### 🔄 Flujo general
+
+```
+User → Ai Factory UI → Selecciona pipeline
+     → RuleEngine → LocalAIManager → AgentExecutor
+         ↓
+     Resultados → Logs → Artifacts → Showcase / Dashboard
+```
+
+---
+
+### 🧩 Reglas de diseño
+
+* Toda la comunicación con AIs es local (sin conexión externa).
+* Los archivos `.yaml` son las fuentes de verdad de reglas y comportamientos.
+* El Showcase no depende de internet, todo se genera desde el sistema local.
+* El usuario puede editar reglas, ver resultados y auditar ejecuciones.
+
+---
+
+### ✅ Definición de Hecho
+
+* [x] Carpeta `app-android/showcase/` creada.
+* [x] Pantallas de galería y demo funcionales.
+* [x] `shared/ai/` con `LocalAIManager`, `AgentExecutor`, y `RuleEngine`.
+* [x] Integración con `configs/agents/*.yaml` validada.
+* [x] Showcase capaz de mostrar themes, widgets y ejecución de pipelines locales.
+
+---

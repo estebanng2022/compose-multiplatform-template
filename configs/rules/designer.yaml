@@ -1,0 +1,7 @@
+meta:
+  name: designer
+  version: 1
+checks:
+  - type: accessibility
+  - type: tokens
+

@@ -1,15 +1,19 @@
+# Gradle/IDE
+.gradle/
+**/build/
+.idea/
 *.iml
-.gradle
-/local.properties
-/.idea
+local.properties
+# Android NDK / CMake
+.cxx/
+captures/
+# Outputs
+*.apk
+*.aab
+# Kotlin/Compose
+*.kotlin_module
+# OS
 .DS_Store
-build/
-/captures
-.externalNativeBuild
-.cxx
-iosApp/Podfile.lock
-iosApp/Pods/*
-iosApp/iosApp.xcworkspace/*
-iosApp/iosApp.xcodeproj/*
-!iosApp/iosApp.xcodeproj/project.pbxproj
-shared/shared.podspec
+Thumbs.db
+# Logs
+*.log

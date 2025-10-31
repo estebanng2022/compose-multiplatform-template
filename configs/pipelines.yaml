@@ -1,0 +1,40 @@
+- id: pipeline-premium
+  name: Pipeline Premium
+  tasks:
+    - id: task-validate-ui
+      name: Auditar UI
+      description: Valida accesibilidad y tokens premium.
+      action: validate:ui
+      params:
+        validator: premium
+    - id: task-snapshots
+      name: Generar snapshots
+      description: Ejecuta snapshots para detectar regresiones visuales.
+      action: validate:snapshots
+      params: {}
+    - id: task-package-android
+      name: Empaquetar Android
+      description: Construye el bundle Android listo para distribución.
+      action: package:android
+      params:
+        variant: release
+    - id: task-export-zip
+      name: Exportar ZIP
+      description: Empaqueta el proyecto completo en artifacts/exports.
+      action: package:zip
+      params:
+        target: artifacts/exports/project.zip
+
+- id: pipeline-desktop
+  name: Pipeline Desktop
+  tasks:
+    - id: task-validate-api
+      name: Verificar API pública
+      description: Verifica cambios en superficie de API.
+      action: validate:api-surface
+      params: {}
+    - id: task-package-desktop
+      name: Empaquetar Desktop
+      description: Construye artefactos para Windows/macOS/Linux.
+      action: package:desktop
+      params: {}

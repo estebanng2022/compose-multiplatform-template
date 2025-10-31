@@ -1,0 +1,18 @@
+{
+  "latest": "1.0.3",
+  "platforms": {
+    "mac": {
+      "url": "https://tu.cdn/aifactory/AiFactory-1.0.3.dmg",
+      "notes": "Mejoras de rendimiento y corrección de bugs."
+    },
+    "win": {
+      "url": "https://tu.cdn/aifactory/AiFactory-1.0.3.msi",
+      "notes": "Actualización recomendada."
+    },
+    "linux": {
+      "url": "https://tu.cdn/aifactory/AiFactory-1.0.3.deb",
+      "notes": "Soporte inicial para Wayland."
+    }
+  },
+  "min_supported": "1.0.0"
+}

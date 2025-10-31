@@ -1,0 +1,9 @@
+id: agent-designer
+name: Designer Premium
+role: UI Designer
+rules: configs/rules/designer.yaml
+tools:
+  - compose
+  - accessibility
+  - tokens
+

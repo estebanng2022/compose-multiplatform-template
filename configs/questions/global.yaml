@@ -1,0 +1,24 @@
+- id: q1
+  text: ¿La pantalla cumple el objetivo definido?
+  category: objetivo
+  required: true
+- id: q2
+  text: ¿Usa correctamente el layout y los widgets del Design System?
+  category: diseño
+  required: true
+- id: q3
+  text: ¿El flujo de datos respeta las capas (Presentation + Domain + Data)?
+  category: arquitectura
+  required: true
+- id: q4
+  text: ¿Tiene estados claros (loading, empty, error)?
+  category: estados
+  required: true
+- id: q5
+  text: ¿Cumple reglas de accesibilidad y theme?
+  category: a11y
+  required: true
+- id: q6
+  text: ¿Se puede reutilizar o mejorar algo?
+  category: mejora
+  required: false
