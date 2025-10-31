@@ -1,6 +1,5 @@
 rootProject.name = "MyApplication"
 
-include(":androidApp")
 include(":shared")
 include(":desktopApp")
 
@@ -14,7 +13,6 @@ pluginManagement {
 
     plugins {
         val kotlinVersion = extra["kotlin.version"] as String
-        val agpVersion = extra["agp.version"] as String
         val composeVersion = extra["compose.version"] as String
 
         kotlin("jvm").version(kotlinVersion)
@@ -23,9 +21,7 @@ pluginManagement {
         kotlin("plugin.serialization").version(kotlinVersion)
         id("org.jetbrains.kotlin.plugin.compose").version(kotlinVersion)
 
-        id("com.android.application").version(agpVersion)
-        id("com.android.library").version(agpVersion)
-
+        // Android Gradle Plugin removed for Desktop‑only
         id("org.jetbrains.compose").version(composeVersion)
     }
 }
