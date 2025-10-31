@@ -173,3 +173,5 @@ Estas preguntas siempre son las mismas; un AI puede leerlas, analizarlas y guiar
 * Design System con múltiples themes listos.
 * App Showcase creada.
 * Lista fija de preguntas activa para revisión por pantalla.
+
+- Ver tambi�n: Parte 7-13 - Desktop Only.md (Showcase, Plugins, Packaging, QA, DoD)
