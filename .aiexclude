@@ -1,0 +1,27 @@
+# caches/outputs
+**/build/**
+**/out/**
+**/.gradle/**
+**/.idea/**
+
+# deps/locks
+**/gradle/**
+**/node_modules/**
+
+# grandes/no text
+**/*.png
+**/*.jpg
+**/*.webp
+**/*.svg
+**/*.pdf
+**/*.mp4
+**/*.zip
+
+# secretos
+**/*.keystore
+**/*.jks
+**/*.pem
+**/*.p12
+**/*.json
+**/secrets/**
+**/telemetry/**/dsn.*

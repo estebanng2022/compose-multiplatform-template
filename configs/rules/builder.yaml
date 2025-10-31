@@ -1,0 +1,8 @@
+meta:
+  name: builder
+  version: 1
+steps:
+  - package: android
+  - package: desktop
+  - export: zip
+

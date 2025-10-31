@@ -1,5 +1,3 @@
-import androidx.compose.runtime.Composable
+package aifactory
 
 actual fun getPlatformName(): String = "Android"
-
-@Composable fun MainView() = App()

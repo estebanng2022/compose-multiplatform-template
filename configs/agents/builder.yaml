@@ -1,0 +1,9 @@
+id: agent-builder
+name: Build Orchestrator
+role: Build & Packaging
+rules: configs/rules/builder.yaml
+tools:
+  - gradle
+  - zip
+  - desktop
+

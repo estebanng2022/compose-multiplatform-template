@@ -1,0 +1,12 @@
+<configuration>
+  <property name="LOG_DIR" value="${user.home}/.aifactory-logs"/>
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${LOG_DIR}/app.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${LOG_DIR}/app.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <maxHistory>7</maxHistory>
+    </rollingPolicy>
+    <encoder><pattern>%d %-5level [%thread] %logger - %msg%n</pattern></encoder>
+  </appender>
+  <root level="INFO"><appender-ref ref="FILE"/></root>
+</configuration>
