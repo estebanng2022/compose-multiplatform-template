@@ -121,7 +121,7 @@ private fun SideNav(
             .semantics { contentDescription = UiStrings.sideNav }
     ) {
         Text("Side Nav", color = Color.White)
-        Spacer(modifier = Modifier.height(LocalSpacing.current.md))
+        Spacer(modifier = Modifier.height(Spacing.medium))
         sideNavItems.forEach { item ->
             val isSelected = currentRoute == item.route
             Box(
@@ -132,7 +132,7 @@ private fun SideNav(
                     .semantics { contentDescription = item.label }
                     .clickable { onNavigate(item.route) }
                     .background(if (isSelected) Color.Blue.copy(alpha = 0.3f) else Color.Transparent)
-                    .padding(LocalSpacing.current.md)
+                    .padding(Spacing.medium)
             ) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
@@ -143,8 +143,8 @@ private fun SideNav(
                         contentDescription = null,
                         tint = Color.White,
                         modifier = Modifier
-                            .width(LocalSizing.current.iconMd)
-                            .height(LocalSizing.current.iconMd)
+                            .width(24.dp)
+                            .height(24.dp)
                     )
                     Text(item.label, color = Color.White)
                 }
