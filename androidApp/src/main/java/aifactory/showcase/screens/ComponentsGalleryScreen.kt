@@ -22,18 +22,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import aifactory.ui.theme.LocalSpacing
+import aifactory.ui.foundation.Spacing
 
 @Composable
 fun ComponentsGalleryScreen() {
-    val spacing = LocalSpacing.current
+    val spacing = Spacing
 
     Surface(modifier = Modifier.fillMaxWidth()) {
         LazyColumn(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = spacing.md, vertical = spacing.md),
-            verticalArrangement = Arrangement.spacedBy(spacing.lg),
+                .padding(horizontal = spacing.medium, vertical = spacing.medium),
+            verticalArrangement = Arrangement.spacedBy(spacing.large),
         ) {
             item {
                 Text(
@@ -44,7 +44,7 @@ fun ComponentsGalleryScreen() {
                 Text(
                     text = "Referencia visual rÃ¡pida de botones, chips, tarjetas y estados.",
                     style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(top = spacing.sm),
+                    modifier = Modifier.padding(top = spacing.small),
                 )
             }
 
@@ -57,14 +57,14 @@ fun ComponentsGalleryScreen() {
 
 @Composable
 private fun ButtonsShowcase() {
-    val spacing = LocalSpacing.current
-    Column(verticalArrangement = Arrangement.spacedBy(spacing.sm)) {
+    val spacing = Spacing
+    Column(verticalArrangement = Arrangement.spacedBy(spacing.small)) {
         Text(
             text = "Botones",
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.SemiBold,
         )
-        Row(horizontalArrangement = Arrangement.spacedBy(spacing.sm)) {
+        Row(horizontalArrangement = Arrangement.spacedBy(spacing.small)) {
             Button(onClick = {}) { Text("Primario") }
             OutlinedButton(onClick = {}) { Text("Secundario") }
         }
@@ -74,14 +74,14 @@ private fun ButtonsShowcase() {
 
 @Composable
 private fun ChipsShowcase() {
-    val spacing = LocalSpacing.current
-    Column(verticalArrangement = Arrangement.spacedBy(spacing.sm)) {
+    val spacing = Spacing
+    Column(verticalArrangement = Arrangement.spacedBy(spacing.small)) {
         Text(
             text = "Chips",
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.SemiBold,
         )
-        Row(horizontalArrangement = Arrangement.spacedBy(spacing.sm)) {
+        Row(horizontalArrangement = Arrangement.spacedBy(spacing.small)) {
             AssistChip(
                 onClick = {},
                 label = { Text("AI Agent") },
@@ -99,14 +99,14 @@ private fun ChipsShowcase() {
 
 @Composable
 private fun CardsShowcase() {
-    val spacing = LocalSpacing.current
-    Column(verticalArrangement = Arrangement.spacedBy(spacing.sm)) {
+    val spacing = Spacing
+    Column(verticalArrangement = Arrangement.spacedBy(spacing.small)) {
         Text(
             text = "Tarjetas de Estado",
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.SemiBold,
         )
-        Row(horizontalArrangement = Arrangement.spacedBy(spacing.sm)) {
+        Row(horizontalArrangement = Arrangement.spacedBy(spacing.small)) {
             StatusCard(title = "Pipeline listo", description = "Todos los validadores han pasado.", color = Color(0xFF22C55E))
             StatusCard(title = "RevisiÃ³n requerida", description = "Hay 2 reglas con cambios pendientes.", color = Color(0xFFF97316))
         }
@@ -115,17 +115,17 @@ private fun CardsShowcase() {
 
 @Composable
 private fun StatusCard(title: String, description: String, color: Color) {
-    val spacing = LocalSpacing.current
+    val spacing = Spacing
     Card(
         colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.15f)),
         modifier = Modifier.weight(1f),
     ) {
-        Column(modifier = Modifier.padding(spacing.md)) {
+        Column(modifier = Modifier.padding(spacing.medium)) {
             Text(text = title, style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold, color = color)
             Text(
                 text = description,
                 style = MaterialTheme.typography.bodySmall,
-                modifier = Modifier.padding(top = spacing.xs),
+                modifier = Modifier.padding(top = spacing.xSmall),
             )
         }
     }
